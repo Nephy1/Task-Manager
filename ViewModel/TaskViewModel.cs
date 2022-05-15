@@ -8,7 +8,7 @@ namespace task_app.ViewModel
 {
     public class TaskViewModel
     {
-        public string Name;
-        public bool Complete;
+        public string Name { get; set; }
+        public bool Complete { get; set; }
     }
 }

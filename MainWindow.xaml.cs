@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using task_app.ViewModel;
 
 namespace task_app
 {
@@ -23,6 +24,12 @@ namespace task_app
         public MainWindow()
         {
             InitializeComponent();
+            var tasks = new TaskListViewModel();
+            tasks.Tasks = new List<TaskViewModel>(); 
+            tasks.Tasks.Add(new TaskViewModel() { Name = "Task 1", Complete = false });
+            tasks.Tasks.Add(new TaskViewModel() { Name = "Task 2", Complete = true });
+            this.DataContext = tasks;
+
         }
     }
 }
