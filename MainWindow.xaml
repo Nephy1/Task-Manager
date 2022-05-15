@@ -31,7 +31,7 @@
                         </Grid.ColumnDefinitions>
                         
                         <TextBlock Text="{Binding Name}"/>
-                        <CheckBox IsChecked="{Binding Checked}"/>
+                        <CheckBox IsChecked="{Binding Checked}" Grid.Column="1"/>
                     </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
@@ -44,7 +44,7 @@
             </Grid.ColumnDefinitions>
 
             <TextBox Text="{Binding TaskName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <Button Grid.Column="1" Content="Add Task" Command ="{Binding CreateTaskCommand}"/>
+            <Button Grid.Column="1" Content="Add Task" Command ="{Binding CreateTaskCommand}" CommandParameter="{Binding}"/>
         </Grid>
     </Grid>
 </Window>

@@ -25,7 +25,6 @@ namespace task_app
         {
             InitializeComponent();
             var tasks = new TaskListViewModel();
-            tasks.Tasks = new List<TaskViewModel>(); 
             tasks.Tasks.Add(new TaskViewModel() { Name = "Task 1", Complete = false });
             tasks.Tasks.Add(new TaskViewModel() { Name = "Task 2", Complete = true });
             this.DataContext = tasks;
