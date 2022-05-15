@@ -15,7 +15,7 @@
 
         <TextBlock Text="Task Manager"/>
 
-        <ItemsControl Grid.Row="1" x:Name="list">
+        <ItemsControl Grid.Row="1" x:Name="list" ItemsSource="{Binding Tasks}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel Orientation="Vertical"/>
@@ -24,7 +24,15 @@
 
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="Task"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <TextBlock Text="{Binding Name}"/>
+                        <CheckBox IsChecked="{Binding Checked}"/>
+                    </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
@@ -35,8 +43,8 @@
                 <ColumnDefinition Width="*" MinWidth="80"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox/>
-            <Button Grid.Column="1" Content="Add Task"/>
+            <TextBox Text="{Binding TaskName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Grid.Column="1" Content="Add Task" Command ="{Binding CreateTaskCommand}"/>
         </Grid>
     </Grid>
 </Window>
