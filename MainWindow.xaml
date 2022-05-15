@@ -15,7 +15,7 @@
 
         <TextBlock Text="Task Manager"/>
 
-        <ItemsControl Grid.Row="1">
+        <ItemsControl Grid.Row="1" x:Name="list">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel Orientation="Vertical"/>
