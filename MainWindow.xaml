@@ -13,7 +13,8 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Task Manager"/>
+        <TextBlock Text="   Task Manager"/>
+        <Label Content="Date" Name="dateLabel" Width="200" Height="50"/>
 
         <ItemsControl Grid.Row="1" x:Name="list" ItemsSource="{Binding Tasks}">
             <ItemsControl.ItemsPanel>
@@ -29,7 +30,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        
+
                         <TextBlock Text="{Binding Name}"/>
                         <CheckBox IsChecked="{Binding Checked}" Grid.Column="1"/>
                     </Grid>

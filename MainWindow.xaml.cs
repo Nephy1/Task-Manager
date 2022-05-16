@@ -24,11 +24,15 @@ namespace task_app
         public MainWindow()
         {
             InitializeComponent();
+            MainWindow_Load();
             var tasks = new TaskListViewModel();
-            tasks.Tasks.Add(new TaskViewModel() { Name = "Task 1", Complete = false });
-            tasks.Tasks.Add(new TaskViewModel() { Name = "Task 2", Complete = true });
             this.DataContext = tasks;
 
+        }
+        private void MainWindow_Load()
+        {
+            var date = DateTime.UtcNow.ToLongDateString();
+            dateLabel.Content = date;
         }
     }
 }
