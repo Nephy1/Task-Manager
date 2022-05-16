@@ -30,9 +30,15 @@ namespace task_app
 
         }
         private void MainWindow_Load()
+            // DATE SETUP
         {
             var date = DateTime.UtcNow.ToLongDateString();
             dateLabel.Content = date;
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
