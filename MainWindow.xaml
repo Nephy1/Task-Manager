@@ -14,6 +14,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="   Task Manager"/>
+        <!--<TextBlock Text="{Binding Customers.Count}"/>-->
         <Label Content="Date" Name="dateLabel" Width="200" Height="50"/>
 
         <ItemsControl Grid.Row="1" x:Name="list" ItemsSource="{Binding Tasks}">
@@ -45,7 +46,7 @@
             </Grid.ColumnDefinitions>
 
             <TextBox Text="{Binding TaskName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <Button Content="Delete Task" Margin="480,0,0,0" Name="DeleteButton" Click="DeleteButton_Click"/>
+            <Button Content="Delete Task" Command="{Binding DeleteTaskCommand}" CommandParameter="{Binding}" Margin="480,0,0,0" Height="20" VerticalAlignment="Top"/>
             <Button Grid.Column="1" Content="Add Task" Command ="{Binding CreateTaskCommand}" CommandParameter="{Binding}"/>
         </Grid>
     </Grid>

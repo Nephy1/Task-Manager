@@ -17,6 +17,7 @@ namespace task_app.Command
             return true;
         }
 
+        // Creates task
         public void Execute(object parameter)
         {
             if (parameter is TaskListViewModel taskList)

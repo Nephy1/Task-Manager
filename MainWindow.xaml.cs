@@ -24,6 +24,7 @@ namespace task_app
         public MainWindow()
         {
             InitializeComponent();
+            // Run Date Function
             MainWindow_Load();
             var tasks = new TaskListViewModel();
             this.DataContext = tasks;
